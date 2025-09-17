@@ -1,0 +1,41 @@
+{
+  "name": "gridstack-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for GridStack.js - comprehensive drag-and-drop grid layout management",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch & node --watch dist/index.js",
+    "test": "jest",
+    "test:tools": "echo '{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"tools/list\"}' | node dist/index.js",
+    "test:resources": "echo '{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"resources/list\"}' | node dist/index.js",
+    "test:init": "echo '{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"tools/call\", \"params\": {\"name\": \"gridstack_init\", \"arguments\": {\"options\": {\"column\": 12, \"cellHeight\": \"auto\"}}}}' | node dist/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "gridstack",
+    "grid",
+    "layout",
+    "dashboard",
+    "drag-drop",
+    "responsive"
+  ],
+  "author": "GridStack MCP",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.4.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.0.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^19.1.13",
+    "jest": "^29.0.0",
+    "typescript": "^5.0.0"
+  },
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ]
+}
